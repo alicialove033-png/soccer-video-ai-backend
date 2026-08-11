@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify
 from flas_vors import CORS
 app = Flask(__name__)
-CORS{app}
+CORS(app)
 @app.route("/", methods=["GET"])
 def home():
     return jsonify({"status": "Soccer Video AI backend is running"})
