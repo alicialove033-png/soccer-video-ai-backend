@@ -9,8 +9,11 @@ def home():
 @app.route("/process-video", methods=["POST"])
 def process_video():
     if "video" not in request.files:
-        return jsonify({"error": "No video uploaded"}), 400
-
+        return jsonify({"error": "No video uploaded",
+        "files_received": list(request.files.keys()),
+        "form_received": list(request.form.keys()),
+        "content_type": request.content_type
+    }), 400
     video = request.files["video"]
 
     return jsonify({
