@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-from flas_vors import CORS
+from flas_cors import CORS
 app = Flask(__name__)
 CORS(app)
 @app.route("/", methods=["GET"])
