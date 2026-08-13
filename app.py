@@ -10,7 +10,7 @@ def home():
 def process_video():
     if "video" not in request.files:
         return jsonify({"error": "No video uploaded",
-        "files_received": list(request.files.keys()),
+        "files_received": [repr(k) for k in request.files.keys()],
         "form_received": list(request.form.keys()),
         "content_type": request.content_type
     }), 400
